@@ -1,0 +1,26 @@
+﻿# LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+# Simulink/Matlab
+*.slxc
+*.asv
+*.autosave
+*.mex*
+.slprj/
+# Python
+__pycache__/
+*.pyc
+.venv/
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Data
+02_processed_data/
+06_results/
