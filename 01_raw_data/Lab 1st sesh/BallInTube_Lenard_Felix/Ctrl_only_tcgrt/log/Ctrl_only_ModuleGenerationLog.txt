@@ -1,0 +1,49 @@
+2025-11-10 13:11:22: ### Start model export with TE1400
+2025-11-10 13:11:22: ### Versions
+2025-11-10 13:11:22:   MATLAB 24.1.0.2689473 (R2024a) Update 6 (win64), C:\Program Files\MATLAB\R2024a
+2025-11-10 13:11:22:   TE140x-TargetForMatlabSimulink 2.9.3.0, C:\TwinCAT\Functions\TE14xx-ToolsForMatlabAndSimulink\TE140x
+2025-11-10 13:11:22: ### Starting build procedure for: Ctrl_only
+2025-11-10 13:11:22: ### Verify model parameters
+2025-11-10 13:11:22:   Warning: The value 'off' of model parameter '<a href="matlab:TwinCAT.ModuleGenerator.Simulink.ModelExportConfig.ShowModelParam('Ctrl_only','GenCodeOnly')">GenCodeOnly</a>' is not supported by this version of TE1400 and was changed to 'on' automatically.
+2025-11-10 13:11:23: ### Get TLC export
+2025-11-10 13:11:23:   TLC export is empty
+2025-11-10 13:11:24: ### Export block diagram
+2025-11-10 13:11:26:   Block diagram export succeeded
+2025-11-10 13:11:26: ### Export TwinCAT C++ project
+2025-11-10 13:11:26: ### Init TMX exporter for Simulink model Ctrl_only
+2025-11-10 13:11:26:   Importing TlcExport file from directory C:\Users\Administrator\Desktop\BallInTube_Tc3_AI\BallInTube\Ctrl_only_tcgrt
+2025-11-10 13:11:26:   Corresponding log file: "C:\Users\Administrator\Desktop\BallInTube_Tc3_AI\BallInTube\Ctrl_only_tcgrt\log\Ctrl_only_ModuleGenerationLog.txt"
+2025-11-10 13:11:26: ### Init project
+2025-11-10 13:11:26: ### Init TMX exporter for Simulink model Ctrl_only
+### Importing TlcExport file from directory C:\Users\Administrator\Desktop\BallInTube_Tc3_AI\BallInTube\Ctrl_only_tcgrt
+2025-11-10 13:11:26: ### Import model information for Ctrl_only
+2025-11-10 13:11:30: ### Save project "Ctrl_only"
+### The TwinCAT C++ project "C:\TwinCAT\3.1\CustomConfig\Modules\Ctrl_only\Ctrl_only.vcxproj" was generated successfully
+2025-11-10 13:11:30: ### Publish TMX
+### Configuration:  "Release"
+### Platform(s):  "TwinCAT RT (x86);TwinCAT RT (x64)"
+### TwinCAT SDK:  "C:\TwinCAT\3.1\SDK\" (Version 3.1.4024.62)
+### Platform Toolset:  V142 (Automatically selected)
+### Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+### Copyright (C) Microsoft Corporation. All rights reserved.
+### Publish procedure completed successfully
+### See log file "C:\TwinCAT\3.1\CustomConfig\Modules\Ctrl_only\log\Ctrl_only_PublishLog.txt" for details
+2025-11-10 13:11:32: ### Publish summary
+### Configuration:  "Release"
+### Platform(s):  "TwinCAT RT (x86);TwinCAT RT (x64)"
+### TwinCAT SDK:  "C:\TwinCAT\3.1\SDK\" (Version 3.1.4024.62)
+### Platform Toolset:  V142 (Automatically selected)
+### Vendor name: TE140x Module Vendor
+### Library name: Ctrl_only
+### Library version: 0.0.0.44
+### Local installation folder: "C:\TwinCAT\3.1\Repository\TE140x Module Vendor\Ctrl_only\0.0.0.44"
+### TMX archive: -
+### Signatures:
+###   File 'C:\TwinCAT\3.1\Repository\TE140x Module Vendor\Ctrl_only\0.0.0.44\TwinCAT RT (x86)\Ctrl_only.tmx' has valid signature.
+###      issuer MCI_2024_OEM (serafin.kollegger@mci.edu), certificate expires on 07/25/2026
+###   File 'C:\TwinCAT\3.1\Repository\TE140x Module Vendor\Ctrl_only\0.0.0.44\TwinCAT RT (x64)\Ctrl_only.tmx' has valid signature.
+###      issuer MCI_2024_OEM (serafin.kollegger@mci.edu), certificate expires on 07/25/2026
+2025-11-10 13:11:26: ### Import model information for Ctrl_only: Block diagram
+2025-11-10 13:11:33:   Successful completion of code generation for: Ctrl_only
+2025-11-10 13:11:33: ### Finish model export
+2025-11-10 13:11:33:   Model export duration: 10.6 s
