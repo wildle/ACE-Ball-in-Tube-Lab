@@ -1,0 +1,8 @@
+w_constant_w = 441.3938
+w = 439.8230
+alpha1 = 0.0071
+alpha2 = 0.2237
+alpha3 = 9.8100
+u0 = -1.1812
+tau_estimated = 1.7217
+ktau_estimated = 286.7462
