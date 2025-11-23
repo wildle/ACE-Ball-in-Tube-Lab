@@ -27,7 +27,18 @@ u(1) = 0;
 % --- Fokus auf RAD/S ---
 y_rpm = ydata_cut_r;              
 y_rps = y_rpm / 60;               
-y_rads = y_rps * 2 * pi;          
+y_rads = y_rps * 2 * pi;     
+kl = 5.5e-5;
+m = 2.7e-3;
+Ab = 1.257e-3;
+Atube = 1.452e-3;
+Agap = Atube - Ab;
+
+alpha2_calc= sqrt(kl/m)*(Ab/Agap)*0.05
+alpha1 = 0.07118;
+omega_1 = 440;
+z_dot = 0.05;
+alpha2_real = (alpha1 * omega_1 - sqrt(9.81))*z_dot
 
 %% 1. Dynamische Analyse (PT1-Modell)
 print_tf_tau_form(y_rads, u, Ts_r, 'rad/s', t_r);
@@ -63,7 +74,7 @@ fprintf('---------------------------------------------------\n');
 % --- Plot der Regression ---
 omega_fit = linspace(min(omega), max(omega), 200);
 U_fit = polyval(p, omega_fit);
-figure('Name', 'Lineare Regression: Spannung vs. Winkelgeschwindigkeit');
+figure('Name', 'Lineare Regression');
 plot(omega, U, 'o', 'MarkerSize', 8, 'LineWidth', 1.8, 'DisplayName', 'Messdaten'); hold on;
 plot(omega_fit, U_fit, '-', 'LineWidth', 1.8, 'DisplayName', 'Lineare Approximation');
 xlabel('Winkelgeschwindigkeit \omega [rad/s]');
@@ -101,7 +112,7 @@ function print_tf_tau_form(y_data, u, Ts, unit_label, t_r)
     sys_pt1_sim = tf([K_tfest], [Tau_tfest 1]);
     y_sim_shifted = lsim(sys_pt1_sim, u, t_r);
     
-    figure('Name', sprintf('Sprungantwort: %s (Ohne Baseline)', upper(unit_label)));
+    figure('Name', sprintf('Sprungantwort', upper(unit_label)));
     plot(t_r, y_shifted, 'b-', 'LineWidth', 1.5, 'DisplayName', 'Messdaten (\Delta y)');
     hold on;
     plot(t_r, y_sim_shifted, 'r--', 'LineWidth', 2, 'DisplayName', 'PT1-Modell (\Delta y)');
@@ -110,7 +121,7 @@ function print_tf_tau_form(y_data, u, Ts, unit_label, t_r)
     
     xlabel('Zeit t [s]');
     ylabel(sprintf('\\Delta Drehzahl [%s]', unit_label));
-    title(sprintf('Sprungantwort: Messdaten vs. PT1-Modell (%s) - OHNE BASELINE (Start bei 0)', upper(unit_label)));
+    title(sprintf('Sprungantwort: Messdaten vs. PT1-Modell', upper(unit_label)));
     legend('Location', 'best');
     hold off;
     
