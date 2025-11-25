@@ -1,5 +1,5 @@
 clc
-open('heightrampfor_a2.fig');
+open('height.fig');
 
 a = get(gca,'Children');  % alle Objekte
 obj = a(2);  % <- hier das Objekt mit echten Daten auswählen
