@@ -1,2 +1,60 @@
 \chapter{Theoretical Background}
-This chapter summarizes the relevant theoretical concepts required to understand the Ball-in-Tube system. It briefly reviews nonlinear system dynamics, the modeling of aerodynamic forces, and the PT1 behavior of the fan. Furthermore, fundamental control concepts such as linearization around an operating point, PID control, and differential flatness for trajectory planning are introduced to provide the foundation for subsequent sections.
+
+This chapter summarizes the theoretical concepts required for modelling, linearization,
+parameter identification, and control of the Ball-in-Tube system. Only the essential
+relations used in the subsequent sections are presented.
+
+\section*{Nonlinear Ball Dynamics}
+
+The motion of the ball is governed by gravity and aerodynamic drag. Assuming that
+frictional effects are negligible and the dominant contribution arises from pressure drag,
+the vertical dynamics can be expressed as
+\[
+    m\ddot{z}(t) = F_{\mathrm{w}}(t) - mg,
+\]
+where \(m\) is the mass of the ball, \(z(t)\) its height, and \(F_{\mathrm{w}}(t)\) the drag force generated
+by the upward airflow. Under the assumptions given in the laboratory instructions, the drag
+force can be simplified to a quadratic function of the relative velocity between the airflow
+and the ball. Introducing the constant coefficients \(\alpha_1, \alpha_2,\alpha_3\), the nonlinear model is
+summarized as
+\[
+    \ddot{z}(t) = \left( \alpha_1 \omega(t) - \alpha_2 \dot{z}(t) \right)^2 - \alpha_3,
+\]
+where \(\omega(t)\) denotes the fan speed. This equation represents the nonlinear plant model
+used for simulation and linearization.
+
+\section*{Fan Dynamics}
+
+The fan exhibits a first-order dynamic behaviour relating the motor voltage \(u(t)\) to the
+resulting fan speed \(\omega(t)\). Neglecting inductive effects, the fan can be approximated by
+a PT1 system
+\[
+    \tau_\omega \dot{\omega}(t) + \omega(t)
+    = k_\omega \left( u(t) - u_0 \right),
+\]
+with time constant \(\tau_\omega\), gain \(k_\omega\), and voltage offset \(u_0\). These parameters are
+identified experimentally using step-response measurements.
+
+\section*{Linearization}
+
+To enable classical control design, the nonlinear plant is linearized around a chosen
+steady-state operating point \((\bar{z},\bar{\dot{z}},\bar{\omega},\bar{u})\). Assuming small perturbations
+around this equilibrium, the nonlinear equations are approximated by a linear time-invariant
+state-space system. This linear model forms the basis for PID tuning and initial controller
+design in MATLAB.
+
+\section*{PID Control}
+
+A PID controller is selected due to its robustness and suitability for single-input single-output
+systems with moderate nonlinearities. The controller parameters are tuned using MATLAB’s
+\texttt{pidTuner}, taking into account actuator saturation, noise amplification, and the slow
+dynamics of the fan. Additional measures such as integrator anti-windup and output
+filtering improve the closed-loop performance under realistic conditions.
+
+\section*{Differential Flatness and Trajectory Planning}
+
+The vertical position \(z(t)\) of the ball is a flat output of the nonlinear system, enabling
+explicit computation of feed-forward inputs from a reference trajectory. A smooth polynomial
+transition is used to generate trajectories that avoid abrupt changes in velocity and
+acceleration, thereby improving tracking behaviour when combined with the feedback
+controller.
