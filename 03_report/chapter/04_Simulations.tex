@@ -1,61 +1,15 @@
-\chapter{Linearization and Parameter Identification}
-The nonlinear state-space model is linearized around a selected operating point to enable classical controller design. The resulting linear system matrices and transfer functions are derived. In addition, this chapter explains how the system parameters such as $\alpha_i$, $k_\omega$, $\tau_\omega$, and the voltage offset $u_0$ are obtained through measurement data, steady-state evaluation, or provided laboratory constants.
+\chapter{Simulation}
 
-
-% % Figures:
-% \begin{figure}[!t]
-%   \begin{tikzpicture}
-%     \begin{axis}[width=15cm, height=6cm,
-%       minor tick num   = 2,
-%       grid             = both,	% have a grid that is bitchin
-%       % GRID OPTIONS
-%       minor grid style = {
-%         densely dotted,
-%         line width = 0.1,
-%         gray!30
-%       },
-%       major grid style={
-%         densely dotted,
-%         line width = 0.3,
-%         gray!30
-%       }]
-%       \addplot+ [
-%       const plot mark right,
-%       ] coordinates {
-%         (0,0.1)    (0.1,0.15)  (0.2,0.5)   (0.3,0.62)
-%         (0.4,0.56) (0.5,0.58)  (0.6,0.65)  (0.7,0.6)
-%         (0.8,0.58) (0.9,0.55)  (1,0.52)
-%       };
-%     \end{axis}
-%   \end{tikzpicture}
-%   \caption{The authors interest in the topic as years go on.}
-% \end{figure}
-
-% % Figures:
-% \begin{figure}[!t]
-%   \begin{tikzpicture}
-%     \begin{axis}[width=15cm, height=6cm,
-%       minor tick num   = 2,
-%       grid             = both,	% have a grid that is bitchin
-%       % GRID OPTIONS
-%       minor grid style = {
-%         densely dotted,
-%         line width = 0.1,
-%         gray!30
-%       },
-%       major grid style={
-%         densely dotted,
-%         line width = 0.3,
-%         gray!30
-%       }]
-%       \addplot+ [
-%       const plot mark right,
-%       ] coordinates {
-%         (0,0.1)    (0.1,0.15)  (0.2,0.5)   (0.3,0.62)
-%         (0.4,0.56) (0.5,0.58)  (0.6,0.65)  (0.7,0.6)
-%         (0.8,0.58) (0.9,0.55)  (1,0.52)
-%       };
-%     \end{axis}
-%   \end{tikzpicture}
-%   \caption{The authors interest in the topic as years go on.}
-% \end{figure}
+\begin{itemize}
+    \item Implementation of the nonlinear ball and fan model in Simulink.
+    \item Inclusion of actuator saturation and measurement noise.
+    \item Computation of steady-state operating point for linearization.
+    \item Linearization of the nonlinear model and derivation of the linear state-space system.
+    \item Transfer function computation for PID controller tuning.
+    \item PID controller design using the linear model and the pidTuner tool.
+    \item Anti-windup configuration and handling of tube height limits.
+    \item Optional output filtering to reduce measurement noise.
+    \item Polynomial trajectory generation for smooth height transitions.
+    \item Flatness-based feed-forward input computation and integration into the control loop.
+    \item Structure of the full closed-loop Simulink simulation including plant, PID, feed-forward, trajectory generator, saturation blocks, and noise.
+\end{itemize}

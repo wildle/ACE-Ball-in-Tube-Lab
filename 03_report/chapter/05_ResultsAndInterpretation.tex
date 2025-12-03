@@ -1,60 +1,12 @@
 \chapter{Results and Interpretation}
-Based on the linearized model, a PID controller is designed using MATLAB's \texttt{pidTuner}. The influence of gains, noise, and actuator limits is discussed. Practical considerations such as integrator windup protection, signal filtering, and handling of nonlinear constraints are addressed to ensure a robust closed-loop performance.
 
-% % Figures:
-% \begin{figure}[!t]
-%   \begin{tikzpicture}
-%     \begin{axis}[width=15cm, height=6cm,
-%       minor tick num   = 2,
-%       grid             = both,	% have a grid that is bitchin
-%       % GRID OPTIONS
-%       minor grid style = {
-%         densely dotted,
-%         line width = 0.1,
-%         gray!30
-%       },
-%       major grid style={
-%         densely dotted,
-%         line width = 0.3,
-%         gray!30
-%       }]
-%       \addplot+ [
-%       const plot mark right,
-%       ] coordinates {
-%         (0,0.1)    (0.1,0.15)  (0.2,0.5)   (0.3,0.62)
-%         (0.4,0.56) (0.5,0.58)  (0.6,0.65)  (0.7,0.6)
-%         (0.8,0.58) (0.9,0.55)  (1,0.52)
-%       };
-%     \end{axis}
-%   \end{tikzpicture}
-%   \caption{The authors interest in the topic as years go on.}
-% \end{figure}
-
-% % Figures:
-% \begin{figure}[!t]
-%   \begin{tikzpicture}
-%     \begin{axis}[width=15cm, height=6cm,
-%       minor tick num   = 2,
-%       grid             = both,	% have a grid that is bitchin
-%       % GRID OPTIONS
-%       minor grid style = {
-%         densely dotted,
-%         line width = 0.1,
-%         gray!30
-%       },
-%       major grid style={
-%         densely dotted,
-%         line width = 0.3,
-%         gray!30
-%       }]
-%       \addplot+ [
-%       const plot mark right,
-%       ] coordinates {
-%         (0,0.1)    (0.1,0.15)  (0.2,0.5)   (0.3,0.62)
-%         (0.4,0.56) (0.5,0.58)  (0.6,0.65)  (0.7,0.6)
-%         (0.8,0.58) (0.9,0.55)  (1,0.52)
-%       };
-%     \end{axis}
-%   \end{tikzpicture}
-%   \caption{The authors interest in the topic as years go on.}
-% \end{figure}
+\begin{itemize}
+    \item Comparison of measured fan step response with the identified PT1 model.
+    \item Validation of the linear model against the nonlinear model for small perturbations.
+    \item Closed-loop behavior with PID control: rise time, overshoot, steady-state behaviour.
+    \item Effect of voltage saturation on control performance.
+    \item Influence of measurement noise and performance of the optional measurement filter.
+    \item Trajectory tracking results with and without feed-forward compensation.
+    \item Discussion of nonlinear effects and mismatch between linear and nonlinear dynamics.
+    \item Interpretation of limitations and remaining discrepancies in controller performance.
+\end{itemize}
